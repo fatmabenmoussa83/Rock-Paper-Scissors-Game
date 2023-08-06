@@ -94,7 +94,7 @@ function game() {
     const playAgainInput = prompt("Do you want to play again? (yes/no)").trim().toLowerCase();
     playAgain = playAgainInput === "yes";
   }
-  prompt("Thank you for playing! See you next time.");
+  alert("Thank you for playing! See you next time.");
 }
 
 game();
