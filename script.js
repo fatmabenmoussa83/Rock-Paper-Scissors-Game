@@ -39,21 +39,17 @@ function playRound(userInput) {
       }
   }
 }
-
 function playerPlay() {
   let playerSelection = prompt("Enter 'Rock', 'Paper', or 'Scissors'");
-
-  // Check if the player canceled the prompt (null)
   if (playerSelection === null) {
-    return null; // Return null to indicate the player canceled the input
+    return null; 
   }
-
   playerSelection = playerSelection.trim().toLowerCase();
   
   while (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors') {
     playerSelection = prompt("Invalid choice. Please enter 'Rock', 'Paper', or 'Scissors'");
     if (playerSelection === null) {
-      return null; // Return null to indicate the player canceled the input
+      return null; 
     }
     playerSelection = playerSelection.trim().toLowerCase();
   }
@@ -62,7 +58,6 @@ function playerPlay() {
 }
 
 function game() {
-  // Prompt to describe the game
   const welcomeMessage = "Welcome to the Rock, Paper, Scissors game! \nYou will play against the computer. The first to win 3 rounds out of 5 wins the game.";
   alert(welcomeMessage);
 
@@ -75,11 +70,9 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
       let playerSelection = playerPlay();
-
-      // Check if the player canceled the prompt (null)
       if (playerSelection === null) {
         alert("You canceled the game.");
-        return; // Exit the game function
+        return;
       }
 
       console.log(`You chose ${playerSelection}`);
@@ -98,13 +91,9 @@ function game() {
 
     console.log("Game Over!");
     console.log(`Final Scores: You: ${playerScore} | Computer: ${computerScore} | Draw: ${draw}`);
-
-    // Ask the user if they want to play again
     const playAgainInput = prompt("Do you want to play again? (yes/no)").trim().toLowerCase();
     playAgain = playAgainInput === "yes";
   }
-
-  // If the player chooses not to play again
   prompt("Thank you for playing! See you next time.");
 }
 
